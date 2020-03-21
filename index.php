@@ -3,7 +3,7 @@ include 'loginData.php';
 session_start();
 
 try {
-    echo $dsn . ' ' . $username . ' ' . $passwd;
+    echo $dsn . ' ' . $username . ' ' . $passwd . '<br>';
     $pdo = new PDO($dsn, $username, $passwd);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
