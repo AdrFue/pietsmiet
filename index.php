@@ -3,7 +3,6 @@ include 'loginData.php';
 session_start();
 
 try {
-    echo $dsn . ' ' . $username . ' ' . $passwd . '<br>';
     $pdo = new PDO($dsn, $username, $passwd);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -23,6 +22,9 @@ $rows = $statement->fetchAll();
 </head>
 <body>
     <h2>Pietsmiet Datenbank</h2>
+    <?php
+    foreach ($rows as $row) {
+    ?>
     <table>
         <tr>
             <th>Titel</th>
@@ -30,24 +32,11 @@ $rows = $statement->fetchAll();
             <th>Datum</th>
             <th>Link</th>
         </tr>
-        <tr>
-            <?php
-            foreach ($rows as $row) {
-                echo $row['titel'];
-            }
-
-            ?>
-        </tr>
-        <tr>
-            <?php
-            foreach ($rows as $row) {
-                echo $row['laenge'];
-            }
-
-            ?>
-        </tr>
-
+        <tr><?php  echo $row['titel'];?> </tr>
+        <tr><?php  echo $row['laenge'];?> </tr>
     </table>
-
+    <?php
+    }
+    ?>
 </body>
 </html>
