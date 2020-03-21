@@ -22,9 +22,7 @@ $rows = $statement->fetchAll();
 </head>
 <body>
     <h2>Pietsmiet Datenbank</h2>
-    <?php
-    foreach ($rows as $row) {
-    ?>
+
     <table>
         <tr>
             <th>Titel</th>
@@ -32,11 +30,17 @@ $rows = $statement->fetchAll();
             <th>Datum</th>
             <th>Link</th>
         </tr>
-        <tr><?php  echo $row['titel'];?> </tr>
-        <tr><?php  echo $row['laenge'];?> </tr>
+
+        <?php
+        foreach ($rows as $row) {
+        ?>
+            <tr><?php  echo $row['titel'];?> </tr>
+            <tr><?php  echo $row['laenge'];?> </tr>
+        <?php
+        }
+        ?>
+
     </table>
-    <?php
-    }
-    ?>
+
 </body>
 </html>
