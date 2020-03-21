@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>Pietsmiet Datenbank</h2>
-Test 1231k
+Test 1231k PHP
 
 </body>
 </html>
