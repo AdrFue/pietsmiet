@@ -36,7 +36,9 @@ $rows = $statement->fetchAll();
         ?>
             <tr>
                 <td><?php  echo $row['titel'];?></td>
-                <td><?php  echo $row['laenge'];?></td>
+                <td><?php  echo $row['laenge']/60 . ':' . $row['laenge']%60;?></td>
+                <td><?php  echo $row['datum'];?></td>
+                <td><?php  echo $row['link'];?></td>
             </tr>
         <?php
         }
