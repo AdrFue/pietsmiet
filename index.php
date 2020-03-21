@@ -9,6 +9,10 @@ try {
 } catch (PDOException $e) {
     echo 'Verbindung fehlgeschlagen: ' . $e->getMessage();
 }
+
+$statement = $pdo->prepare("SELECT * FROM pskocht_videos");
+$statement->execute();
+$rows = $statement->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,31 @@ try {
 </head>
 <body>
     <h2>Pietsmiet Datenbank</h2>
-Test 1231k PHP
+    <table>
+        <tr>
+            <th>Titel</th>
+            <th>Länge</th>
+            <th>Datum</th>
+            <th>Link</th>
+        </tr>
+        <tr>
+            <?php
+            foreach ($rows as $row) {
+                echo $row['titel'];
+            }
+
+            ?>
+        </tr>
+        <tr>
+            <?php
+            foreach ($rows as $row) {
+                echo $row['laenge'];
+            }
+
+            ?>
+        </tr>
+
+    </table>
 
 </body>
 </html>
