@@ -38,7 +38,10 @@ $rows = $statement->fetchAll();
         ?>
             <tr>
                 <td><?php  echo $row['titel'];?></td>
-                <td><?php  echo floor($row['laenge']/60) . ':' . $row['laenge']%60;?></td>
+                <td><?php
+                    $sec = $row['laenge']%60;
+                    if ($sec < 10) $sec = "0" . $sec;
+                    echo floor($row['laenge']/60) . ':' . $sec;?></td>
                 <td><?php  echo $row['datum'];?></td>
                 <td>
                     <a href="<?php echo $row['link'];?>" target="_blank">
