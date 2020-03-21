@@ -40,7 +40,7 @@ $rows = $statement->fetchAll();
                 <td><?php  echo $row['datum'];?></td>
                 <td>
                     <a href="<?php echo $row['link'];?>">
-                        <img src="images/youtube_icon.png">
+                        <img src="images/youtube_icon.png" class="img_link">
                     </a>
                 </td>
             </tr>
