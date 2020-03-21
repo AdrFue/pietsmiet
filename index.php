@@ -34,8 +34,10 @@ $rows = $statement->fetchAll();
         <?php
         foreach ($rows as $row) {
         ?>
-            <tr><?php  echo $row['titel'];?> </tr>
-            <tr><?php  echo $row['laenge'];?> </tr>
+            <tr>
+                <td><?php  echo $row['titel'];?></td>
+                <td><?php  echo $row['laenge'];?></td>
+            </tr>
         <?php
         }
         ?>
