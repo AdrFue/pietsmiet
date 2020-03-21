@@ -21,7 +21,6 @@ $rows = $statement->fetchAll();
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Datenbank aller Rankings von PietSmiet" />
     <link rel="stylesheet" href="https://pietsmiet.adrianf.de/styles.css">
-    <
 </head>
 <body>
     <h2>Pietsmiet Datenbank</h2>
@@ -42,7 +41,7 @@ $rows = $statement->fetchAll();
                 <td><?php  echo floor($row['laenge']/60) . ':' . $row['laenge']%60;?></td>
                 <td><?php  echo $row['datum'];?></td>
                 <td>
-                    <a href="<?php echo $row['link'];?>">
+                    <a href="<?php echo $row['link'];?>" target="_blank">
                         <img src="images/youtube_icon.png" class="img_link">
                     </a>
                 </td>
