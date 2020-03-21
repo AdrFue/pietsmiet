@@ -3,10 +3,11 @@ include 'loginData.php';
 session_start();
 
 try {
-$pdo = new PDO('mysql:host=' . $host . ';dbname=' . $host, $username, $passwd);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo $dsn . ' ' . $username . ' ' . $passwd;
+    $pdo = new PDO($dsn, $username, $passwd);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-echo 'Verbindung fehlgeschlagen: ' . $e->getMessage();
+    echo 'Verbindung fehlgeschlagen: ' . $e->getMessage();
 }
 ?>
 
