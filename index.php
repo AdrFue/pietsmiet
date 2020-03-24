@@ -9,7 +9,7 @@ try {
     echo 'Verbindung fehlgeschlagen: ' . $e->getMessage();
 }
 
-$statement = $pdo->prepare("SELECT * FROM pskocht_videos ORDER BY datum DESC");
+$statement = $pdo->prepare("SELECT * FROM pskocht ORDER BY datum DESC");
 $statement->execute();
 $rows = $statement->fetchAll();
 ?>
