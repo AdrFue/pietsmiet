@@ -36,19 +36,19 @@ $rows = $statement->fetchAll();
         <?php
         foreach ($rows as $row) {
         ?>
-            <tr>
-                <td><?php  echo $row['titel'];?></td>
-                <td><?php
-                    $sec = $row['laenge']%60;
-                    if ($sec < 10) $sec = "0" . $sec;
-                    echo floor($row['laenge']/60) . ':' . $sec;?></td>
-                <td><?php  echo $row['datum'];?></td>
-                <td>
-                    <a href="<?php echo $row['link'];?>" target="_blank">
-                        <img src="images/youtube_icon.png" class="img_link">
-                    </a>
-                </td>
-            </tr>
+        <tr>
+            <td><?php  echo $row['titel'];?></td>
+            <td><?php
+                $sec = $row['laenge']%60;
+                if ($sec < 10) $sec = "0" . $sec;
+                echo floor($row['laenge']/60) . ':' . $sec;?></td>
+            <td><?php  echo $row['datum'];?></td>
+            <td>
+                <a href="<?php echo $row['link'];?>" target="_blank">
+                    <img src="images/youtube_icon.png" class="img_link" alt="">
+                </a>
+            </td>
+        </tr>
         <?php
         }
         ?>
